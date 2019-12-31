@@ -1,5 +1,7 @@
-import * as mysql from 'mysql'
-import config from '../config'
+import * as mysql from 'mysql'  //import mysql lib
+import config from '../config'  //import database configuration, as password/user ..
+
+import Telemetry from './telemetry';
 
 export const Connection = mysql.createConnection(config.mysql);
 
@@ -8,3 +10,7 @@ Connection.connect(err =>{
         console.log(err);
     }
 })
+
+export default{
+    Telemetry
+}
